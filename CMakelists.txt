@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.10)
+
+project(fracky)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CONFIGURATION_TYPES "Debug;Release;Dist" CACHE STRING "" FORCE)
+
+include_directories(${CMAKE_SOURCE_DIR}/include)
+
+add_library(fracky STATIC ${CMAKE_SOURCE_DIR}/src/Serialization.cpp ${CMAKE_SOURCE_DIR}/src/Deserialization.cpp)
+
+set_target_properties(fracky PROPERTIES EXCLUDE_FROM_ALL TRUE)
